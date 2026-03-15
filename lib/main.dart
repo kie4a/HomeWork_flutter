@@ -1,4 +1,5 @@
 import 'package:app/homework/homework_1.dart';
+import 'package:app/sheeets/sheet_1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class homeWork extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homework1(),
+      home: Sheet1(),
     );
   }
 }
