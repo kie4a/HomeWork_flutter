@@ -70,22 +70,7 @@ class _Homework2State extends State<Homework2> {
                           ),
                         ],
                       ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 20,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CusemIcons(icon: Icons.call, text: "CALL",textColor: Color(0xff858087),),
-                            Spacer(),
-                            CusemIcons(icon: Icons.near_me, text: "ROUTE",textColor: Color(0xff858087)),
-                            Spacer(),
-                            CusemIcons(icon: Icons.share, text: "SHARE",textColor: Color(0xff858087)),
-                          ],
-                        ),
-                      ),
+                      RowOfIocnsQuickState(),
                       Text(
                         "Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg,followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer.Activities enjoyed here include rowing, and riding the summer toboggan run.",
                       ),
@@ -101,8 +86,51 @@ class _Homework2State extends State<Homework2> {
   }
 }
 
+class RowOfIocnsQuickState extends StatelessWidget {
+  const RowOfIocnsQuickState({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 40,
+        vertical: 20,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CusemIcons(
+            icon: Icons.call,
+            text: "CALL",
+            textColor: Color(0xff858087),
+          ),
+          Spacer(),
+          CusemIcons(
+            icon: Icons.near_me,
+            text: "ROUTE",
+            textColor: Color(0xff858087),
+          ),
+          Spacer(),
+          CusemIcons(
+            icon: Icons.share,
+            text: "SHARE",
+            textColor: Color(0xff858087),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class CusemIcons extends StatelessWidget {
-  const CusemIcons({super.key, required this.icon, required this.text, required this.textColor});
+  const CusemIcons({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.textColor,
+  });
   final IconData icon;
   final String text;
   final Color textColor;
@@ -112,7 +140,7 @@ class CusemIcons extends StatelessWidget {
       children: [
         Icon(icon, size: 30, color: Color(0xff6A529E)),
         SizedBox(height: 5),
-        Text(text, style: TextStyle(fontSize: 14, color:textColor)),
+        Text(text, style: TextStyle(fontSize: 14, color: textColor)),
       ],
     );
   }
